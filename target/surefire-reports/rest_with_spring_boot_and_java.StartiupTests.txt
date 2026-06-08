@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: rest_with_spring_boot_and_java.StartiupTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.441 s -- in rest_with_spring_boot_and_java.StartiupTests
