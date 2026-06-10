@@ -1,6 +1,7 @@
 package br.com.raiane.controllers;
 
 
+import br.com.raiane.exception.UnsupportedMathOperationException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,12 +15,14 @@ public class MathController {
             @PathVariable("numberOne") String numberOne,
             @PathVariable("numberTwo") String numberTwo
     ) throws Exception {
-        if (!isNumeric(numberOne) || !isNumeric(numberTwo)) throw new IllegalArgumentException();
+        if (!isNumeric(numberOne) || !isNumeric(numberTwo))
+            throw new UnsupportedMathOperationException("Please set a numeric value!");
         return ConvertToDouble(numberOne) + ConvertToDouble(numberTwo);
     }
 
     private Double ConvertToDouble(String strNumber) throws IllegalArgumentException {
-        if (strNumber == null || strNumber.isEmpty()) throw new IllegalArgumentException();
+        if (strNumber == null || strNumber.isEmpty())
+            throw new UnsupportedMathOperationException("Please set a numeric value!");
         String number = strNumber.replace(",", "."); // R$ 5,00 USD 5.00
         return Double.parseDouble(number);
 
