@@ -4,9 +4,20 @@
 /target/
 /out/
 /build/
+/node_modules
 
 # Compiled class files
 *.class
+
+# SSH keys
+*.pem
+*.ppk
+
+# Merge Files
+*.bak
+
+%Gradle temporary files
+target/
 
 # Packages
 *.jar
