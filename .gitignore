@@ -83,3 +83,8 @@ docker-compose.override.yml
 # Ignore IDE launchers
 *.log
 
+# Ignore application YAML config files (e.g., src/main/resources/application.yaml)
+application.yaml
+src/**/application.yaml
+
+src/main/resources/application.yaml
